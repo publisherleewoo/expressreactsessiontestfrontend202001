@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Link } from "react-router-dom"
+import { BrowserRouter, Route, Link } from "react-router-dom" 
 import routes from "./routes"
 
 
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter>
+      <BrowserRouter>
         <ul id="ul" style={ulStyle}>
           <li style={liStyle}><Link to={{ pathname: "/" }}>home</Link></li>
           <li style={liStyle}><Link to={{ pathname: "/login" }}>login</Link></li>
@@ -30,7 +30,8 @@ function App() {
             )
           })
         }
-      </HashRouter>
+        
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import JoinPresenter from '../components/presenter/JoinPresenter';
+import JoinPresenter from '../components/container/JoinContainer';
 
 class Join extends Component {
    
@@ -10,15 +10,15 @@ class Join extends Component {
       }
     }
 
-    push=(arg)=>{
-      console.log("emit")
+    routerPush=(arg)=>{
+      console.log("recive emit")
       this.props.history.push(arg)
     }
 
     render() {
       
         return (
-          <JoinPresenter routerPush={this.push} /> 
+          <JoinPresenter routerPush={this.routerPush} /> 
         );
     }
 }

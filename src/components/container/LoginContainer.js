@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import axios from "axios"
-
+import LoginPresenter from '../presenter/LoginPresenter'
 class LoginContainer extends Component {
+    constructor(props){
+        super(props)
+        this.state={
 
-    submitF(e) {
+        }
+    }
+    submitF=(e)=>{
         e.preventDefault();
         let uid = e.target.uid.value;
         let upws = e.target.upws.value;
@@ -11,30 +16,19 @@ class LoginContainer extends Component {
             uid,
             upws
         })
-            .then(function (response) {
+            .then((response)=> {
                 console.log(response);
+                alert("통신성공")
+                // this.props.routerPush("/")
             })
-            .catch(function (error) {
+            .catch((error)=> {
+                alert("에러")
                 console.log(error);
             });
     }
 
     render() {
-
-        return (
-            <div>
-                <h1>Login페이지</h1>
-                <form
-                    onSubmit={(e) => {
-                        this.submitF(e);
-                    }}>
-                    <p>id: <input id="uid" name="uid" /></p>
-                    <p>password: <input id="upws" name="upws" /></p>
-                    <p><input type="submit" /></p>
-
-                </form>
-            </div>
-        );
+        return <LoginPresenter submitF={this.submitF} />
     }
 }
 

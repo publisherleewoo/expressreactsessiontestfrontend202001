@@ -1,9 +1,14 @@
 import React from 'react';
-
+import Store from '../../store'
 const LoginContainer=({submitF})=> {
-
+    
     return (
         <div>
+            <Store.Consumer>
+                {(store)=>{
+                    return ( console.log(store))
+                }}
+            </Store.Consumer>
             <h1>Login페이지</h1>
             <form
                 onSubmit={(e) => {
